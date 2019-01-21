@@ -11,3 +11,10 @@ given a number which is valid but is not in the range of interesting number: 1
 when check is interestingNumber
 then output 0
 ````
+
+Task 3:
+````
+given a number which Any digit followed by all zeros: 100
+when check is interestingNumber
+then output 2
+````
