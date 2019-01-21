@@ -39,3 +39,10 @@ given a number which the digits are sequential & incementing: 890
 when check is interestingNumber
 then output 2
 ````
+
+Task 7;
+````
+given a number which the digits are sequential & decrementing: 321
+when check is interestingNumber
+then output 2
+````
