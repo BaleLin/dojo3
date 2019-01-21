@@ -18,8 +18,20 @@ public class CarMileage {
         return 2;
       if(digitSequentialAndInc(number))
         return 2;
+      if(digitSequentialAndDesc(number))
+        return 2;
       else return 0;
     }
+  }
+
+  private static boolean digitSequentialAndDesc(int number) {
+    Integer[] array = numberToDigitArray(number);
+    for(int i = array.length - 1; i > 0; i--) {
+      if ((array[i] - array[i - 1]) != 1) {
+        return false;
+      }
+    }
+    return true;
   }
 
   private static boolean digitSequentialAndInc(int number) {
