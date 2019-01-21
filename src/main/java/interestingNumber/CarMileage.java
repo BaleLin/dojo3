@@ -16,8 +16,14 @@ public class CarMileage {
         return 2;
       if(digitIsSameNumber(number))
         return 2;
+      if(digitSequentialAndInc(number))
+        return 2;
       else return 0;
     }
+  }
+
+  private static boolean digitSequentialAndInc(int number) {
+    return true;
   }
 
   private static boolean digitIsSameNumber(int number) {

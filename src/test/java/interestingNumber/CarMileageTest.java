@@ -36,4 +36,12 @@ public class CarMileageTest {
     int actualResult = CarMileage.isInteresting(inputNumber);
     Assert.assertEquals(expectedResult, actualResult);
   }
+
+  @Test
+  public void should_return_0_when_check_interesting_number_given_number_digits_are_sequential_and_increment_123() {
+    int inputNumber = 123;
+    int expectedResult = 2;
+    int actualResult = CarMileage.isInteresting(inputNumber);
+    Assert.assertEquals(expectedResult, actualResult);
+  }
 }
