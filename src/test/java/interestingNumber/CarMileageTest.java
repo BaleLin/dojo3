@@ -28,4 +28,12 @@ public class CarMileageTest {
     int actualResult = CarMileage.isInteresting(inputNumber);
     Assert.assertEquals(expectedResult, actualResult);
   }
+
+  @Test
+  public void should_return_0_when_check_interesting_number_given_number_digit_is_the_same_number_111() {
+    int inputNumber = 111;
+    int expectedResult = 2;
+    int actualResult = CarMileage.isInteresting(inputNumber);
+    Assert.assertEquals(expectedResult, actualResult);
+  }
 }

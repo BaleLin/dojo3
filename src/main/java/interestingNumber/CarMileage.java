@@ -11,8 +11,14 @@ public class CarMileage {
     else {
       if (digitFollowedByZeros(number))
         return 2;
+      if(digitIsSameNumber(number))
+        return 2;
       else return 0;
     }
+  }
+
+  private static boolean digitIsSameNumber(int number) {
+    return true;
   }
 
   private static boolean digitFollowedByZeros(int number) {
