@@ -23,14 +23,24 @@ public class CarMileage {
   }
 
   private static boolean digitSequentialAndInc(int number) {
+    Integer[] array = numberToDigitArray(number);
+    for(int i = array.length - 1; i > 0; i--) {
+      if(array[i] == 0) {
+        array[i] = 10;
+      }
+      if(array[i - 1] == 0) {
+        array[i - 1] = 10;
+      }
+      if((array[i - 1] - array[i]) % 10 != 1) {
+        return false;
+      }
+    }
     return true;
   }
 
   private static boolean digitIsSameNumber(int number) {
     Set<Integer> digitSet = new HashSet<Integer>(Arrays.asList(numberToDigitArray(number)));
-    if(digitSet.size() == 1)
-      return true;
-    return false;
+    return digitSet.size() == 1;
   }
 
   private static boolean digitFollowedByZeros(int number) {
