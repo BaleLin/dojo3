@@ -46,3 +46,10 @@ given a number which the digits are sequential & decrementing: 321
 when check is interestingNumber
 then output 2
 ````
+
+Task 8;
+````
+given a number which the digits are a palindrome: 121
+when check is interestingNumber
+then output 2
+````

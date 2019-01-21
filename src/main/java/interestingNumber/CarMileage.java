@@ -20,8 +20,14 @@ public class CarMileage {
         return 2;
       if(digitSequentialAndDesc(number))
         return 2;
+      if(digitIsPalindrome(number))
+        return 2;
       else return 0;
     }
+  }
+
+  private static boolean digitIsPalindrome(int number) {
+    return true;
   }
 
   private static boolean digitSequentialAndDesc(int number) {
