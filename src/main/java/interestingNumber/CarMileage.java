@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class CarMileage {
 
-  public static int isInteresting(int number) {
+  public static int isInteresting(int number, Integer [] awesomePhrases) {
     if(number < 100)
       return 0;
     else {

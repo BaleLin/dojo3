@@ -53,3 +53,10 @@ given a number which the digits are a palindrome: 121
 when check is interestingNumber
 then output 2
 ````
+
+Task 9:
+````
+given a number which the digits not match one of the values in the awesomePhrases array: 124, []
+when check is interestingNumber
+then output 0
+````
