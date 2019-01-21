@@ -25,9 +25,17 @@ given a number which the digits is the same number: 111
 when check is interestingNumber
 then output 2
 ````
+
 Task 5;
 ````
 given a number which the digits are sequential & incementing: 123
+when check is interestingNumber
+then output 2
+````
+
+Task 6;
+````
+given a number which the digits are sequential & incementing: 890
 when check is interestingNumber
 then output 2
 ````
