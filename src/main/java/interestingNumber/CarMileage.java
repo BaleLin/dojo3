@@ -27,6 +27,12 @@ public class CarMileage {
   }
 
   private static boolean digitIsPalindrome(int number) {
+    Integer[] array = numberToDigitArray(number);
+    int arrayEndIndex = array.length - 1;
+    for(int i = 0; i < array.length / 2; i++) {
+      if(array[i] != array[arrayEndIndex - i])
+        return false;
+    }
     return true;
   }
 
