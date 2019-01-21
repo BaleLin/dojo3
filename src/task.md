@@ -4,3 +4,10 @@ Task 1:
   when check is interestingNumber
   then output 0
   ````
+  
+Task 2:
+````
+given a number which is valid but is not in the range of interesting number: 1
+when check is interestingNumber
+then output 0
+````

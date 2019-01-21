@@ -12,4 +12,12 @@ public class CarMileageTest {
     int actualResult = CarMileage.isInteresting(0);
     Assert.assertEquals(expectedResult, actualResult);
   }
+
+  @Test
+  public void should_return_0_when_check_interesting_number_given_number_1_not_in_the_range_of_interesting() {
+    int inputNumber = 1;
+    int expectedResult = 0;
+    int actualResult = CarMileage.isInteresting(inputNumber);
+    Assert.assertEquals(expectedResult, actualResult);
+  }
 }
