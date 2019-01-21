@@ -1,7 +1,10 @@
 package interestingNumber;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class CarMileage {
 
@@ -18,7 +21,10 @@ public class CarMileage {
   }
 
   private static boolean digitIsSameNumber(int number) {
-    return true;
+    Set<Integer> digitSet = new HashSet<Integer>(Arrays.asList(numberToDigitArray(number)));
+    if(digitSet.size() == 1)
+      return true;
+    return false;
   }
 
   private static boolean digitFollowedByZeros(int number) {
