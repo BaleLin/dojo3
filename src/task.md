@@ -60,3 +60,10 @@ given a number which the digits not match one of the values in the awesomePhrase
 when check is interestingNumber
 then output 0
 ````
+
+Task 10:
+````
+given a number which the digits match one of the values in the awesomePhrases array: 124, [124, 245]
+when check is interestingNumber
+then output 2
+````

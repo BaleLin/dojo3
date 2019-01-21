@@ -75,4 +75,12 @@ public class CarMileageTest {
     Assert.assertEquals(expectedResult, actualResult);
   }
 
+  @Test
+  public void should_return_0_when_check_interesting_number_given_number_digits_124_match_one_element_of_awesomePhrases() {
+    int inputNumber = 124;
+    int expectedResult = 2;
+    int actualResult = CarMileage.isInteresting(inputNumber, new Integer[]{124, 245});
+    Assert.assertEquals(expectedResult, actualResult);
+  }
+
 }

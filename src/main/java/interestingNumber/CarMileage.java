@@ -22,8 +22,14 @@ public class CarMileage {
         return 2;
       if(digitIsPalindrome(number))
         return 2;
+      if(matchAwesomePhrases(number, awesomePhrases))
+        return 2;
       else return 0;
     }
+  }
+
+  private static boolean matchAwesomePhrases(int number, Integer[] awesomePhrases) {
+    return awesomePhrases.length != 0;
   }
 
   private static boolean digitIsPalindrome(int number) {
