@@ -70,7 +70,7 @@ then output 2
 
 Task 11:
 ````
-given a serious of number which the digits is 109, 110, 111
+given a serious of number which the digits is 110
 when check is interestingNumber
-then output is 1,1,2
+then output is 1
 ````

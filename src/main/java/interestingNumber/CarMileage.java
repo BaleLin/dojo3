@@ -8,44 +8,63 @@ import java.util.Set;
 
 public class CarMileage {
 
+  private static final int NOT_INTERESTING_NUMBER_RANGE = 0;
+  private static final int INTERESTING_NUMBER_RANGE = 100;
+  private static final int BORING_NUMBER = 0;
+  private static final int CLOSE_TO_NUMBER = 1;
+  private static final int INTERESTING_NUMBER = 2;
+
   public static int isInteresting(int number, Integer [] awesomePhrases) {
-    if(number < 100)
-      return 0;
+    if(number < INTERESTING_NUMBER_RANGE)
+      return NOT_INTERESTING_NUMBER_RANGE;
     else {
-      if (digitFollowedByZeros(number))
-        return 2;
-      if(digitIsSameNumber(number))
-        return 2;
-      if(digitSequentialAndInc(number))
-        return 2;
-      if(digitSequentialAndDesc(number))
-        return 2;
-      if(digitIsPalindrome(number))
-        return 2;
-      if(matchAwesomePhrases(number, awesomePhrases))
-        return 2;
-      else return 0;
+      if(checkIsInterestingNumber(number, awesomePhrases))
+        return INTERESTING_NUMBER;
+      else if(checkIsInterestingNumber(number + 1, awesomePhrases)) {
+        return CLOSE_TO_NUMBER;
+      }
+      else if(checkIsInterestingNumber(number + 2, awesomePhrases)) {
+        return CLOSE_TO_NUMBER;
+      } else {
+        return BORING_NUMBER;
+      }
     }
   }
 
-  public static Integer[] isInteresting(Integer[] array, Integer [] awesomePhrases) {
-    Integer [] recordArray = new Integer[array.length];
-    for(int index = 0; index<array.length;index++) {
-      recordArray[index] = isInteresting(array[index], awesomePhrases);
-    }
-    for (int index = 0; index<array.length - 1;index++){
-      if(recordArray[index] == 0) {
-        if(recordArray[index + 1] == 2 && array[index + 1] - array[index] < 3) {
-          recordArray[index] = 1;
-        } else if(index + 2 < array.length) {
-          if(recordArray[index + 2] == 2 && array[index + 2] - array[index] < 3) {
-            recordArray[index] = 1;
-          }
-        }
-      }
-    }
-    return recordArray;
+  private static boolean checkIsInterestingNumber(int number, Integer[] awesomePhrases) {
+    if (digitFollowedByZeros(number))
+      return true;
+    if(digitIsSameNumber(number))
+      return true;
+    if(digitSequentialAndInc(number))
+      return true;
+    if(digitSequentialAndDesc(number))
+      return true;
+    if(digitIsPalindrome(number))
+      return true;
+    if(matchAwesomePhrases(number, awesomePhrases))
+      return true;
+    return false;
   }
+
+//  public static Integer[] isInteresting(Integer[] array, Integer [] awesomePhrases) {
+//    Integer [] recordArray = new Integer[array.length];
+//    for(int index = 0; index<array.length;index++) {
+//      recordArray[index] = isInteresting(array[index], awesomePhrases);
+//    }
+//    for (int index = 0; index<array.length - 1;index++){
+//      if(recordArray[index] == 0) {
+//        if(recordArray[index + 1] == 2 && array[index + 1] - array[index] < 3) {
+//          recordArray[index] = 1;
+//        } else if(index + 2 < array.length) {
+//          if(recordArray[index + 2] == 2 && array[index + 2] - array[index] < 3) {
+//            recordArray[index] = 1;
+//          }
+//        }
+//      }
+//    }
+//    return recordArray;
+//  }
 
   private static boolean matchAwesomePhrases(int number, Integer[] awesomePhrases) {
     if(awesomePhrases.length == 0)
