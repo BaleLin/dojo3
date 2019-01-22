@@ -13,6 +13,8 @@ public class CarMileage {
   private static final int BORING_NUMBER = 0;
   private static final int CLOSE_TO_NUMBER = 1;
   private static final int INTERESTING_NUMBER = 2;
+  private static final int NEXT_ONE_MILE = 1;
+  private static final int NEXT_TWO_MILE = 2;
 
   public static int isInteresting(int number, Integer [] awesomePhrases) {
     if(number < INTERESTING_NUMBER_RANGE)
@@ -20,10 +22,10 @@ public class CarMileage {
     else {
       if(checkIsInterestingNumber(number, awesomePhrases))
         return INTERESTING_NUMBER;
-      else if(checkIsInterestingNumber(number + 1, awesomePhrases)) {
+      else if(checkIsInterestingNumber(number + NEXT_ONE_MILE, awesomePhrases)) {
         return CLOSE_TO_NUMBER;
       }
-      else if(checkIsInterestingNumber(number + 2, awesomePhrases)) {
+      else if(checkIsInterestingNumber(number + NEXT_TWO_MILE, awesomePhrases)) {
         return CLOSE_TO_NUMBER;
       } else {
         return BORING_NUMBER;

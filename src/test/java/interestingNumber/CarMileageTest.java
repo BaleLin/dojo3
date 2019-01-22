@@ -9,7 +9,7 @@ public class CarMileageTest {
   public void shoule_return_0_when_check_interesting_number_given_invalid_number_0() {
     int inputNumber = 0;
     int expectedResult = 0;
-    int actualResult = CarMileage.isInteresting(0, new Integer[]{});
+    int actualResult = CarMileage.isInteresting(inputNumber, new Integer[]{});
     Assert.assertEquals(expectedResult, actualResult);
   }
 
@@ -86,6 +86,14 @@ public class CarMileageTest {
   @Test
   public void should_return_0_when_check_interesting_number_given_number_digits_110_close_to_interesting_number() {
     int inputNumber = 110;
+    int expectedResult = 1;
+    int actualResult = CarMileage.isInteresting(inputNumber, new Integer[]{});
+    Assert.assertEquals(expectedResult, actualResult);
+  }
+
+  @Test
+  public void should_return_0_when_check_interesting_number_given_number_digits_109_close_to_interesting_number() {
+    int inputNumber = 109;
     int expectedResult = 1;
     int actualResult = CarMileage.isInteresting(inputNumber, new Integer[]{});
     Assert.assertEquals(expectedResult, actualResult);

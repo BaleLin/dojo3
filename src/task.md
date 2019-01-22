@@ -74,3 +74,10 @@ given a serious of number which the digits is 110
 when check is interestingNumber
 then output is 1
 ````
+
+Task 12:
+````
+given a serious of number which the digits is 109
+when check is interestingNumber
+then output is 1
+````
