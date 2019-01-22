@@ -67,3 +67,10 @@ given a number which the digits match one of the values in the awesomePhrases ar
 when check is interestingNumber
 then output 2
 ````
+
+Task 11:
+````
+given a serious of number which the digits is 109, 110, 111
+when check is interestingNumber
+then output is 1,1,2
+````

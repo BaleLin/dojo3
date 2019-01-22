@@ -28,6 +28,25 @@ public class CarMileage {
     }
   }
 
+  public static Integer[] isInteresting(Integer[] array, Integer [] awesomePhrases) {
+    Integer [] recordArray = new Integer[array.length];
+    for(int index = 0; index<array.length;index++) {
+      recordArray[index] = isInteresting(array[index], awesomePhrases);
+    }
+    for (int index = 0; index<array.length - 1;index++){
+      if(recordArray[index] == 0) {
+        if(recordArray[index + 1] == 2 && array[index + 1] - array[index] < 3) {
+          recordArray[index] = 1;
+        } else if(index + 2 < array.length) {
+          if(recordArray[index + 2] == 2 && array[index + 2] - array[index] < 3) {
+            recordArray[index] = 1;
+          }
+        }
+      }
+    }
+    return recordArray;
+  }
+
   private static boolean matchAwesomePhrases(int number, Integer[] awesomePhrases) {
     if(awesomePhrases.length == 0)
       return false;
