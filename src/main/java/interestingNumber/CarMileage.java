@@ -16,16 +16,15 @@ public class CarMileage {
   private static final int NEXT_ONE_MILE = 1;
   private static final int NEXT_TWO_MILE = 2;
 
-  public static int isInteresting(int number, Integer [] awesomePhrases) {
-    if(number < INTERESTING_NUMBER_RANGE)
+  public static int isInteresting(int number, Integer[] awesomePhrases) {
+    if (number < INTERESTING_NUMBER_RANGE) {
       return NOT_INTERESTING_NUMBER_RANGE;
-    else {
-      if(checkIsInterestingNumber(number, awesomePhrases))
+    } else {
+      if (checkIsInterestingNumber(number, awesomePhrases)) {
         return INTERESTING_NUMBER;
-      else if(checkIsInterestingNumber(number + NEXT_ONE_MILE, awesomePhrases)) {
+      } else if (checkIsInterestingNumber(number + NEXT_ONE_MILE, awesomePhrases)) {
         return CLOSE_TO_NUMBER;
-      }
-      else if(checkIsInterestingNumber(number + NEXT_TWO_MILE, awesomePhrases)) {
+      } else if (checkIsInterestingNumber(number + NEXT_TWO_MILE, awesomePhrases)) {
         return CLOSE_TO_NUMBER;
       } else {
         return BORING_NUMBER;
@@ -34,47 +33,35 @@ public class CarMileage {
   }
 
   private static boolean checkIsInterestingNumber(int number, Integer[] awesomePhrases) {
-    if (digitFollowedByZeros(number))
+    if (digitFollowedByZeros(number)) {
       return true;
-    if(digitIsSameNumber(number))
+    }
+    if (digitIsSameNumber(number)) {
       return true;
-    if(digitSequentialAndInc(number))
+    }
+    if (digitSequentialAndInc(number)) {
       return true;
-    if(digitSequentialAndDesc(number))
+    }
+    if (digitSequentialAndDesc(number)) {
       return true;
-    if(digitIsPalindrome(number))
+    }
+    if (digitIsPalindrome(number)) {
       return true;
-    if(matchAwesomePhrases(number, awesomePhrases))
+    }
+    if (matchAwesomePhrases(number, awesomePhrases)) {
       return true;
+    }
     return false;
   }
 
-//  public static Integer[] isInteresting(Integer[] array, Integer [] awesomePhrases) {
-//    Integer [] recordArray = new Integer[array.length];
-//    for(int index = 0; index<array.length;index++) {
-//      recordArray[index] = isInteresting(array[index], awesomePhrases);
-//    }
-//    for (int index = 0; index<array.length - 1;index++){
-//      if(recordArray[index] == 0) {
-//        if(recordArray[index + 1] == 2 && array[index + 1] - array[index] < 3) {
-//          recordArray[index] = 1;
-//        } else if(index + 2 < array.length) {
-//          if(recordArray[index + 2] == 2 && array[index + 2] - array[index] < 3) {
-//            recordArray[index] = 1;
-//          }
-//        }
-//      }
-//    }
-//    return recordArray;
-//  }
-
   private static boolean matchAwesomePhrases(int number, Integer[] awesomePhrases) {
-    if(awesomePhrases.length == 0)
+    if (awesomePhrases.length == 0) {
       return false;
-    else {
-      for(Integer awesomePhrase: awesomePhrases) {
-        if(awesomePhrase == number)
+    } else {
+      for (Integer awesomePhrase : awesomePhrases) {
+        if (awesomePhrase == number) {
           return true;
+        }
       }
     }
     return false;
@@ -83,16 +70,17 @@ public class CarMileage {
   private static boolean digitIsPalindrome(int number) {
     Integer[] array = numberToDigitArray(number);
     int arrayEndIndex = array.length - 1;
-    for(int i = 0; i < array.length / 2; i++) {
-      if(array[i] != array[arrayEndIndex - i])
+    for (int i = 0; i < array.length / 2; i++) {
+      if (array[i] != array[arrayEndIndex - i]) {
         return false;
+      }
     }
     return true;
   }
 
   private static boolean digitSequentialAndDesc(int number) {
     Integer[] array = numberToDigitArray(number);
-    for(int i = array.length - 1; i > 0; i--) {
+    for (int i = array.length - 1; i > 0; i--) {
       if ((array[i] - array[i - 1]) != 1) {
         return false;
       }
@@ -102,14 +90,11 @@ public class CarMileage {
 
   private static boolean digitSequentialAndInc(int number) {
     Integer[] array = numberToDigitArray(number);
-    for(int i = array.length - 1; i > 0; i--) {
-      if(array[i] == 0) {
-        array[i] = 10;
-      }
-      if(array[i - 1] == 0) {
+    for (int i = array.length - 1; i > 0; i--) {
+      if (array[i - 1] == 0) {
         array[i - 1] = 10;
       }
-      if((array[i - 1] - array[i]) % 10 != 1) {
+      if ((array[i - 1] - array[i]) % 10 != 1) {
         return false;
       }
     }
@@ -132,7 +117,7 @@ public class CarMileage {
     int digit = number % 10;
     digitList.add(digit);
     number /= 10;
-    while(number > 0) {
+    while (number > 0) {
       digit = number % 10;
       digitList.add(digit);
       number /= 10;
